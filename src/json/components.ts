@@ -248,10 +248,17 @@ export const components: any = {
       inputType: "select",
       defaultValue: "",
       readOnly: false,
-      options: ["", "Cooler Master", "Corsair", "EVGA", "Gigabyte", "SeaSonic"],
+      options: ["", "Corsair"],
     },
     { key: "model", inputType: "text", defaultValue: "", readOnly: false },
 
+    {
+      key: "wattage",
+      inputType: "select",
+      defaultValue: 0,
+      readOnly: false,
+      options: [0, 400, 450, 500, 550, 600, 650, 750, 850, 1000, 1200, 1500, 1600],
+    },
     {
       key: "efficiency_rating",
       inputType: "select",
@@ -259,13 +266,19 @@ export const components: any = {
       readOnly: false,
       options: ["", "80+ Titanium", "80+ Platinum", "80+ Gold", "80+ Bronze", "80+"],
     },
-    { key: "wattage", inputType: "number", defaultValue: 0, readOnly: false },
+    {
+      key: "modular",
+      inputType: "select",
+      defaultValue: "",
+      readOnly: false,
+      options: ["", "Full", "Semi", "No"],
+    },
     {
       key: "form_factor",
       inputType: "select",
-      defaultValue: "ATX",
+      defaultValue: "",
       readOnly: false,
-      options: ["ATX", "SFX"],
+      options: ["", "ATX", "SFX"],
     },
 
     { key: "price", inputType: "number", defaultValue: 0, readOnly: false },
@@ -289,17 +302,16 @@ export const components: any = {
       inputType: "select",
       defaultValue: "",
       readOnly: false,
-      options: ["", "Cooler Master", "Corsair", "Fractal Design", "Lian Li", "NZXT"],
+      options: ["", "Corsair"],
     },
     { key: "model", inputType: "text", defaultValue: "", readOnly: false },
 
-    { key: "length", inputType: "number", defaultValue: 0, readOnly: false },
     {
       key: "form_factor",
       inputType: "select",
       defaultValue: "",
       readOnly: false,
-      options: ["", "FULL TOWER", "MID TOWER", "SMALL FORM"],
+      options: ["", "SUPER TOWER", "FULL TOWER", "MID TOWER", "SMALL FORM"],
     },
     {
       key: "PSU",
@@ -308,6 +320,9 @@ export const components: any = {
       readOnly: false,
       options: ["no", "yes"],
     },
+    { key: "height", inputType: "number", defaultValue: 0, readOnly: false },
+    { key: "length", inputType: "number", defaultValue: 0, readOnly: false },
+    { key: "width", inputType: "number", defaultValue: 0, readOnly: false },
 
     { key: "price", inputType: "number", defaultValue: 0, readOnly: false },
     { key: "power", inputType: "number", defaultValue: 0, readOnly: false },

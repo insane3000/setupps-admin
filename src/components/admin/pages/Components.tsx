@@ -189,7 +189,7 @@ const TableSt = styled.div`
   overflow: visible;
   .tRow {
     display: grid;
-    grid-template-columns: 5% 7.5% calc(25% - 2.6rem) 7.5% 5% 5% 5% 5% 7.5%  5% 12.5% 5% 5%;
+    grid-template-columns: 5% 7.5% calc(25% - 2.6rem) 7.5% 5% 5% 5% 7.5% 7.5% 7.5% 7.5% 5% 5%;
     grid-template-rows: 100%;
     column-gap: 0.2rem;
     justify-content: center;
@@ -222,7 +222,7 @@ const TableSt = styled.div`
       display: block;
       border-radius: 0.3rem;
       font-family: "Roboto 500";
-      font-size: .8vw;
+      font-size: 0.8vw;
       color: white;
       padding: 0 1rem;
 
@@ -262,7 +262,7 @@ const TableSt = styled.div`
     .head {
       background: #000000;
       font-family: "Roboto 300";
-      font-size: .8vw;
+      font-size: 0.8vw;
       text-align: center;
       color: #ffffff;
       text-transform: none;
@@ -361,6 +361,7 @@ const Components = () => {
       "available",
 
       "architecture",
+      "total_cores",
       "integrated_graphics",
       "stock_cooler",
     ],
@@ -375,6 +376,7 @@ const Components = () => {
       "platform",
       "memory_speed_max",
       "form_factor",
+      "ram_type",
     ],
     ram: [
       "manufacturer",
@@ -384,9 +386,9 @@ const Components = () => {
       "specifications",
       "available",
 
+      "ram_type",
       "memory_size",
       "speed",
-      "ram_type",
       "CAS_latency",
     ],
     gpu: [
@@ -413,6 +415,7 @@ const Components = () => {
       "efficiency_rating",
       "wattage",
       "form_factor",
+      "modular",
     ],
     case: [
       "manufacturer",
@@ -422,9 +425,10 @@ const Components = () => {
       "specifications",
       "available",
 
-      "length",
       "form_factor",
       "PSU",
+      "height",
+      "length",
     ],
     nvme: [
       "manufacturer",
