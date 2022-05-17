@@ -438,9 +438,10 @@ const Components = () => {
       "specifications",
       "available",
 
-      "capacity",
-      "terabytes_written",
+      "write",
       "read",
+      "capacity",
+      "TBW",
     ],
     ssd: [
       "manufacturer",
@@ -450,9 +451,10 @@ const Components = () => {
       "specifications",
       "available",
 
-      "capacity",
-      "terabytes_written",
+      "write",
       "read",
+      "capacity",
+      "TBW",
     ],
     hdd: [
       "manufacturer",
@@ -465,6 +467,7 @@ const Components = () => {
       "capacity",
       "rpm",
       "cache",
+      "interface",
     ],
     cooler: [
       "manufacturer",
@@ -477,6 +480,7 @@ const Components = () => {
       "compatibility",
       "cooler_type",
       "noise_level",
+      "fans",
     ],
   };
 
