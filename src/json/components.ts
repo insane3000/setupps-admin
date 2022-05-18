@@ -515,7 +515,6 @@ export const components: any = {
     },
     { key: "model", inputType: "text", defaultValue: "", readOnly: false },
 
-    { key: "compatibility", inputType: "text", defaultValue: "", readOnly: false },
     {
       key: "cooler_type",
       inputType: "select",
@@ -523,14 +522,23 @@ export const components: any = {
       readOnly: false,
       options: ["", "Air", "Liquid"],
     },
-    { key: "noise_level", inputType: "text", defaultValue: "", readOnly: false },
     {
       key: "fans",
       inputType: "select",
-      defaultValue: "",
+      defaultValue: 0,
       readOnly: false,
       options: [0, 1, 2, 3],
     },
+    {
+      key: "fans_size",
+      inputType: "select",
+      defaultValue: 0,
+      readOnly: false,
+      options: [0, 120, 140],
+    },
+    { key: "compatibility", inputType: "text", defaultValue: "", readOnly: false },
+
+    { key: "noise_level", inputType: "text", defaultValue: "", readOnly: false },
 
     { key: "price", inputType: "number", defaultValue: 0, readOnly: false },
     { key: "power", inputType: "number", defaultValue: 0, readOnly: false },
