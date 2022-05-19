@@ -143,7 +143,12 @@ const AddComponent = () => {
     }
 
     await axios
-      .post(`${process.env.REACT_APP_BACKEND_URL}/${params.component}`, formData)
+      .post(`${process.env.REACT_APP_BACKEND_URL}/${params.component}`, formData, {
+        headers: {
+          authorization: `Bearer ${app.login.token}`,
+          id: `${app.login.id}`,
+        },
+      })
       .then((response) => {
         if (response.statusText === "OK") {
           navigate(-1);
@@ -193,7 +198,7 @@ const AddComponent = () => {
                   onChange={(e) => handleChangeState(e)}
                   onFocus={(e) => e.currentTarget.select()}
                   value={state[i.key]}
-                //   required
+                  //   required
                   readOnly={i.readOnly}
                 />
               )}

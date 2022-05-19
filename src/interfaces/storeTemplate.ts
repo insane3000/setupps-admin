@@ -1,15 +1,13 @@
 export type AppInterface = {
   login: {
-    user: string;
     token: string;
-    role: string;
+    id: "";
   };
 };
 export const appTemplate: AppInterface = {
   login: {
-    user: "",
     token: "",
-    role: "",
+    id: "",
   },
 };
 

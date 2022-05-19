@@ -15,8 +15,8 @@ export const components: any = {
     { key: "number_of_performance_cores", inputType: "number", defaultValue: 0, readOnly: false },
     { key: "number_of_efficient_cores", inputType: "number", defaultValue: 0, readOnly: false },
     { key: "total_threads", inputType: "number", defaultValue: 0, readOnly: false },
-    { key: "boost_clock", inputType: "number", defaultValue: "", readOnly: false },
-    { key: "cache", inputType: "number", defaultValue: "", readOnly: false },
+    { key: "boost_clock", inputType: "number", defaultValue: 0, readOnly: false },
+    { key: "cache", inputType: "number", defaultValue: 0, readOnly: false },
     {
       key: "integrated_graphics",
       inputType: "select",

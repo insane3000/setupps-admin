@@ -16,6 +16,8 @@ import { MdKeyboardArrowRight } from "react-icons/md";
 import { MdFirstPage } from "react-icons/md";
 import { MdLastPage } from "react-icons/md";
 import Spinner from "components/Spinner";
+import { StoreInterface } from "interfaces/storeTemplate";
+import { useSelector } from "react-redux";
 const MediaSt = styled.div`
   width: 100%;
   height: 100%;
@@ -305,6 +307,7 @@ const Components = () => {
   const location = useLocation();
   const paramsLocation = new URLSearchParams(location.search);
   const navigate = useNavigate();
+  const app = useSelector((store: StoreInterface) => store.app);
 
   // !Obteniendo los parametros
   const page: any = paramsLocation.get("page");
@@ -314,7 +317,13 @@ const Components = () => {
   // !Fetching Function
   const fetchData = async ({ queryKey }: any) => {
     const { data } = await axios.get(
-      `${process.env.REACT_APP_BACKEND_URL}/${queryKey[0]}?page=${queryKey[1]}&search=${queryKey[2]}&available=${queryKey[3]}&manufacturer=${queryKey[4]}`
+      `${process.env.REACT_APP_BACKEND_URL}/${queryKey[0]}?page=${queryKey[1]}&search=${queryKey[2]}&available=${queryKey[3]}&manufacturer=${queryKey[4]}`,
+      {
+        headers: {
+          authorization: `Bearer ${app.login.token}`,
+          id: `${app.login.id}`,
+        },
+      }
     );
     return data;
   };
@@ -326,6 +335,9 @@ const Components = () => {
       keepPreviousData: true,
       cacheTime: 0,
       staleTime: 0,
+      onError: () => {
+        navigate("/");
+      },
     }
   );
   //     console.log(data);

@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 // import axios from "axios";
 // *Redux
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setLogin } from "redux/actions/appAction";
 import axios from "axios";
 import { useNavigate } from "react-router";
+import { StoreInterface } from "interfaces/storeTemplate";
 // *Axios
 // import Spinner from "./Spinner";
 // import { StoreInterface } from "interfaces/storeTemplate";
@@ -186,64 +187,42 @@ const AddProductsSt = styled.form`
     }
   }
 `;
-interface LoginIT {
-  [key: string]: string | number;
-  user: string;
-  password: string;
-}
-const loginTemplate = {
-  user: "",
-  password: "",
-};
 
 const AddProducts = () => {
   let navigate = useNavigate();
   const dispatch = useDispatch();
-  // const app = useSelector((store: StoreInterface) => store.app);
+  const app = useSelector((store: StoreInterface) => store.app);
 
-  const [loginLocal, setLoginLocal] = useState<LoginIT>(loginTemplate);
-  // const [spinner, setSpinner] = useState(false);
-  const [errorUser, setErrorUser] = useState(false);
-  // console.log(login);
+  const [state, setState] = useState({
+    user: "",
+    password: "",
+  });
+  const [error, setError] = useState(false);
 
-  const handleAddProducts = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const name = e.target.name;
-    const value = e.target.value;
-    setLoginLocal({
-      ...loginLocal,
-      [name]: value,
-    });
-  };
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // setSpinner(true);
-    // console.log(login);
     await axios
-      .post(`${process.env.REACT_APP_BACKEND_URL}/login`, loginLocal)
+      .post(`${process.env.REACT_APP_BACKEND_URL}/admin`, state)
       .then(function (response) {
-        dispatch(setLogin(response.data._id, response.data.token, response.data.role));
+        dispatch(setLogin(response.data.token, response.data.id));
         localStorage.setItem("token", response.data.token);
-        localStorage.setItem("user", response.data._id);
-        localStorage.setItem("role", response.data.role);
-        navigate(`/admin/media`);
-        // console.log(response.data);
+        localStorage.setItem("id", response.data.id);
+        navigate(`/admin/components/cpu?page=1&search=&available=&manufacturer=`);
       })
       .catch(function (error) {
-        // console.log(error);
-        // setSpinner(false);
-        setErrorUser(true);
+        setError(true);
+        localStorage.setItem("token", "");
+        localStorage.setItem("id", "");
       });
-    // console.log(login);
   };
-  // useEffect(() => {
-  //   if (localStorage.getItem("token") && localStorage.getItem("token") !== "") {
-  //     // navigate(`/admin/login`);
-  //     dispatch(loginServer("", "", ""));
-  //     localStorage.setItem("token", "");
-  //     localStorage.setItem("user", "");
-  //     localStorage.setItem("role", "");
-  //   }
-  // });
+
+  useEffect(() => {
+    if (localStorage.getItem("token") && localStorage.getItem("token") !== "") {
+      navigate(`/admin/components/cpu?page=1&search=&available=&manufacturer=`);
+      //       dispatch(setLogin(`${localStorage.getItem("token")}`, `${localStorage.getItem("id")}`));
+    }
+  }, []);
+
   return (
     <AddProductsSt onSubmit={handleSubmit}>
       <h2 className="titleAddProducts">Identificate</h2>
@@ -252,8 +231,8 @@ const AddProducts = () => {
         type="text"
         name="user"
         placeholder="Nombre de usuario."
-        onChange={handleAddProducts}
-        value={loginLocal.user}
+        onChange={(e) => setState({ ...state, user: e.target.value })}
+        value={state.user}
         onFocus={(e) => e.target.select()}
         required
       />
@@ -262,15 +241,16 @@ const AddProducts = () => {
         type="password"
         name="password"
         placeholder="Contraseña."
-        onChange={handleAddProducts}
-        value={loginLocal.password}
+        onChange={(e) => setState({ ...state, password: e.target.value })}
+        value={state.password}
         onFocus={(e) => e.target.select()}
         required
       />
-      {errorUser && <span className="alert">Los datos son incorrectos.</span>}
+      {error && <span className="alert">Los datos son incorrectos.</span>}
       <button className="btnSubmit" type="submit">
         Entrar
       </button>
+
       {/* {spinner && <Spinner />} */}
     </AddProductsSt>
   );

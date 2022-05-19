@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 // *Icons
 import { IoAppsSharp } from "react-icons/io5";
+import { HiLogin } from "react-icons/hi";
 // import { AiFillMessage } from "react-icons/ai";
 // import { FaUserEdit } from "react-icons/fa";
 // import { MdBackup } from "react-icons/md";
@@ -96,8 +97,8 @@ const Navigation = () => {
   const dispatch = useDispatch();
   //   const history = useHistory();
   // const app = useSelector((store: StoreInterface) => store.app);
-  const reloadPage = (e: any) => {
-    dispatch(setLogin("", "", ""));
+  const logout = (e: any) => {
+    dispatch(setLogin("", ""));
     localStorage.setItem("token", "");
     localStorage.setItem("user", "");
     // history.push(`admin/login`);
@@ -110,6 +111,10 @@ const Navigation = () => {
       >
         <IoAppsSharp className="sysIconNav" />
         <span className="text none">Media</span>
+      </NavLink>
+      <NavLink className="navLink" to={"/login"} onClick={logout}>
+        <HiLogin className="sysIconNav" />
+        <span className="text none">Logout</span>
       </NavLink>
 
       {/* <NavLink className="navLink" to="/admin/reports">

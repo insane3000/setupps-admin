@@ -37,19 +37,11 @@ const queryClient = new QueryClient({
 });
 function App() {
   const dispatch = useDispatch();
-  const app = useSelector((store: StoreInterface) => store.app);
-
   useEffect(() => {
-    if (localStorage.getItem("token") && localStorage.getItem("user")) {
-      dispatch(
-        setLogin(
-          `${localStorage.getItem("user")}`,
-          `${localStorage.getItem("token")}`,
-          `${localStorage.getItem("role")}`
-        )
-      );
+    if (localStorage.getItem("token") && localStorage.getItem("token") !== "") {
+      dispatch(setLogin(`${localStorage.getItem("token")}`, `${localStorage.getItem("id")}`));
     }
-  }, [dispatch]);
+  }, []);
 
   return (
     <QueryClientProvider client={queryClient}>
@@ -61,12 +53,13 @@ function App() {
             }}
           />
           <Routes>
-            <Route
+            {/* <Route
               path="/"
               element={
                 <Navigate to={`/admin/components/cpu?page=1&search=&available=&manufacturer=`} />
               }
-            />
+            /> */}
+            <Route path="/" element={<Navigate to={"/login"} />} />
             <Route path="/admin/*" element={<Admin />} />
             <Route path="/login" element={<Login />} />
             <Route path="/*" element={<Error404 />} />

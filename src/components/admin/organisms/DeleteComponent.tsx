@@ -1,6 +1,8 @@
 import axios from "axios";
+import { StoreInterface } from "interfaces/storeTemplate";
 import React from "react";
 import toast from "react-hot-toast";
+import { useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 const DeleteSt = styled.div`
@@ -46,7 +48,7 @@ const DeleteWindow = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const paramsLocation = new URLSearchParams(location.search);
-
+  const app = useSelector((store: StoreInterface) => store.app);
   // !Obteniendo los parametros
   const component = paramsLocation.get("component");
   const id = paramsLocation.get("id");
@@ -54,7 +56,12 @@ const DeleteWindow = () => {
   // !Delete Component
   const handleDelete = async () => {
     await axios
-      .delete(`${process.env.REACT_APP_BACKEND_URL}/${component}/${id}?component=${component}`)
+      .delete(`${process.env.REACT_APP_BACKEND_URL}/${component}/${id}?component=${component}`, {
+        headers: {
+          authorization: `Bearer ${app.login.token}`,
+          id: `${app.login.id}`,
+        },
+      })
       .then(() => {
         navigate(-1);
         toast.success("Borrado.");

@@ -200,7 +200,12 @@ const Search = () => {
     formData.append("imageS", JSON.stringify(data.imageS));
     formData.append("_id", data._id);
     await axios
-      .put(`${process.env.REACT_APP_BACKEND_URL}/${params.component}/${id}`, formData)
+      .put(`${process.env.REACT_APP_BACKEND_URL}/${params.component}/${id}`, formData, {
+        headers: {
+          authorization: `Bearer ${app.login.token}`,
+          id: `${app.login.id}`,
+        },
+      })
       .then((response) => {
         if (response.statusText === "OK") {
           navigate(-1);
@@ -282,7 +287,7 @@ const Search = () => {
                   onChange={(e) => handleChangeState(e)}
                   onFocus={(e) => e.currentTarget.select()}
                   value={state[i.key]}
-                //   required
+                  //   required
                   readOnly={i.readOnly}
                 />
               )}
