@@ -115,6 +115,13 @@ export const components: any = {
       options: ["", "32 GB", "64 GB", "128 GB"],
     },
     {
+      key: "PCIe",
+      inputType: "select",
+      defaultValue: "",
+      readOnly: false,
+      options: ["", "PCIe 3.0", "PCIe 4.0", "PCIe 5.0"],
+    },
+    {
       key: "form_factor",
       inputType: "select",
       defaultValue: "",
@@ -142,7 +149,7 @@ export const components: any = {
       inputType: "select",
       defaultValue: "",
       readOnly: false,
-      options: ["", "Corsair", "Kingston"],
+      options: ["", "Corsair", "Kingston", "Crucial"],
     },
     { key: "model", inputType: "text", defaultValue: "", readOnly: false },
 
@@ -151,7 +158,7 @@ export const components: any = {
       inputType: "select",
       defaultValue: 0,
       readOnly: false,
-      options: [0, 8, 16, 32, 64, 128],
+      options: ["", "8 GB", "16 GB", "32 GB", "64 GB", "128 GB"],
     },
     {
       key: "speed",
@@ -182,7 +189,7 @@ export const components: any = {
       inputType: "select",
       defaultValue: 0,
       readOnly: false,
-      options: [0, 3, 6, 12, 24, 48],
+      options: ["", 3, 6, 12, 24, 48],
     },
     { key: "quantity", inputType: "number", defaultValue: 1, readOnly: true },
     { key: "error", inputType: "text", defaultValue: "false", readOnly: true },
@@ -211,9 +218,9 @@ export const components: any = {
     {
       key: "memory",
       inputType: "select",
-      defaultValue: 0,
+      defaultValue: "",
       readOnly: false,
-      options: [0, 4, 8, 10, 12, 16, 24],
+      options: ["", "4 GB", "8 GB", "10 GB", "12 GB", "16 GB", "24 GB", "32 GB"],
     },
     {
       key: "memory_type",
@@ -264,7 +271,14 @@ export const components: any = {
       inputType: "select",
       defaultValue: "",
       readOnly: false,
-      options: ["", "80+ Titanium", "80+ Platinum", "80+ Gold", "80+ Bronze", "80+"],
+      options: [
+        "",
+        "80 PLUS Titanium",
+        "80 PLUS Platinum",
+        "80 PLUS Gold",
+        "80 PLUS Bronze",
+        "80 PLUS",
+      ],
     },
     {
       key: "modular",
@@ -473,7 +487,7 @@ export const components: any = {
       inputType: "select",
       defaultValue: 0,
       readOnly: false,
-      options: [0, 64, 256],
+      options: ["", "64 MB", "256 MB"],
     },
     {
       key: "interface",
