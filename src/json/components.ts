@@ -104,7 +104,9 @@ export const components: any = {
       inputType: "select",
       defaultValue: 0,
       readOnly: false,
-      options: [0, 6400, 5000, 5333, 5066, 4800, 3200],
+      options: [
+        0, 6400, 5400, 5333, 5200, 5066, 5000, 4933, 4800, 4733, 4666, 4600, 4533, 4200, 4066, 3200,
+      ],
     },
     {
       key: "lan_speed_max",

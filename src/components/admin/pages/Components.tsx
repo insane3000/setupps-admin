@@ -386,7 +386,7 @@ const Components = () => {
       "available",
 
       "PCIe",
-      "memory_speed_max",
+      "chipset",
       "form_factor",
       "ram_type",
     ],
