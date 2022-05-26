@@ -375,7 +375,7 @@ const Components = () => {
       "architecture",
       "total_cores",
       "integrated_graphics",
-      "stock_cooler",
+      "launch_date",
     ],
     mobo: [
       "manufacturer",
@@ -708,7 +708,11 @@ const Components = () => {
                 className="cell"
                 key={e}
                 style={
-                  i[e]?.length === 0 || i[e] === "" || i[e] === 0 || i[e] === "undefined"
+                  i[e]?.length === 0 ||
+                  i[e] === "" ||
+                  i[e] === 0 ||
+                  i[e] === "undefined" ||
+                  i[e] === "false"
                     ? { color: "#ff004c" }
                     : e === "price"
                     ? { color: "#00ffa6" }

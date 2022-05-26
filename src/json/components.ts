@@ -1,4 +1,4 @@
-const TODAY = new Date().toISOString().substring(0, 10);
+// const TODAY = new Date().toISOString().substring(0, 10);
 export const components: any = {
   // !CPU
   cpu: [
@@ -38,7 +38,7 @@ export const components: any = {
       readOnly: false,
       options: ["", "Alder Lake", "Zen 3"],
     },
-    { key: "launch_date", inputType: "date", defaultValue: TODAY, readOnly: false },
+    { key: "launch_date", inputType: "text", defaultValue: "", readOnly: false },
     {
       key: "stock_cooler",
       inputType: "select",
@@ -90,7 +90,7 @@ export const components: any = {
       inputType: "select",
       defaultValue: "",
       readOnly: false,
-      options: ["", "Z690", "H670", "B660", "H610", "LGA1200", "X570", "B550", "A520"],
+      options: ["", "Z690", "H670", "B660", "H610", "X570", "B550", "A520"],
     },
     {
       key: "ram_type",
@@ -99,7 +99,13 @@ export const components: any = {
       readOnly: false,
       options: ["", "DDR5", "DDR4"],
     },
-    { key: "memory_speed_max", inputType: "number", defaultValue: "", readOnly: false },
+    {
+      key: "memory_speed_max",
+      inputType: "select",
+      defaultValue: 0,
+      readOnly: false,
+      options: [0, 6400, 5000, 5333, 5066, 4800, 3200],
+    },
     {
       key: "lan_speed_max",
       inputType: "select",
@@ -129,7 +135,13 @@ export const components: any = {
       options: ["", "EATX", "ATX", "Micro ATX", "Mini ITX"],
     },
     { key: "price", inputType: "number", defaultValue: 0, readOnly: false },
-    { key: "power", inputType: "number", defaultValue: 0, readOnly: false },
+    {
+      key: "power",
+      inputType: "select",
+      defaultValue: 0,
+      readOnly: false,
+      options: [0, 100, 70, 60, 30],
+    },
     { key: "quantity", inputType: "number", defaultValue: 1, readOnly: true },
     { key: "error", inputType: "text", defaultValue: "false", readOnly: true },
     { key: "warning", inputType: "text", defaultValue: "none", readOnly: true },
