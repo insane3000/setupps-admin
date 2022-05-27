@@ -330,7 +330,7 @@ export const components: any = {
       inputType: "select",
       defaultValue: "",
       readOnly: false,
-      options: ["", "Corsair"],
+      options: ["", "Cooler Master", "Corsair"],
     },
     { key: "model", inputType: "text", defaultValue: "", readOnly: false },
 
