@@ -491,7 +491,7 @@ const Components = () => {
 
       "compatibility",
       "cooler_type",
-      "noise_level",
+      "fans",
       "fans_size",
     ],
   };

@@ -539,7 +539,7 @@ export const components: any = {
       inputType: "select",
       defaultValue: "",
       readOnly: false,
-      options: ["", "Corsair"],
+      options: ["", "Cooler Master", "Corsair", "Noctua"],
     },
     { key: "model", inputType: "text", defaultValue: "", readOnly: false },
 
@@ -562,14 +562,14 @@ export const components: any = {
       inputType: "select",
       defaultValue: 0,
       readOnly: false,
-      options: [0, 120, 140],
+      options: [0, 92, 95.5, 120, 140],
     },
     { key: "compatibility", inputType: "text", defaultValue: "", readOnly: false },
 
     { key: "noise_level", inputType: "text", defaultValue: "", readOnly: false },
 
     { key: "price", inputType: "number", defaultValue: 0, readOnly: false },
-    { key: "power", inputType: "number", defaultValue: 0, readOnly: false },
+    { key: "power", inputType: "select", defaultValue: 0, readOnly: false, options: [0, 10, 15] },
     { key: "quantity", inputType: "number", defaultValue: 1, readOnly: true },
     { key: "error", inputType: "text", defaultValue: "false", readOnly: true },
     { key: "warning", inputType: "text", defaultValue: "none", readOnly: true },
