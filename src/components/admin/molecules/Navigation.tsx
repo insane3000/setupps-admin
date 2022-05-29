@@ -110,7 +110,7 @@ const Navigation = () => {
         to={`/admin/components/cpu?page=1&search=&available=&manufacturer=`}
       >
         <IoAppsSharp className="sysIconNav" />
-        <span className="text none">Media</span>
+        <span className="text none">Components</span>
       </NavLink>
       <NavLink className="navLink" to={"/login"} onClick={logout}>
         <HiLogin className="sysIconNav" />
