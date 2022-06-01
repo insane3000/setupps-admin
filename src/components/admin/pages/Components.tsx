@@ -410,11 +410,11 @@ const Components = () => {
       "power",
       "specifications",
 
+      "available",
       "length",
       "memory",
       "memory_type",
       "benchmark",
-      "launch_date",
     ],
     power: [
       "manufacturer",

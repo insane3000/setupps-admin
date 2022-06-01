@@ -151,7 +151,7 @@ const AddComponent = () => {
       })
       .then((response) => {
         if (response.statusText === "OK") {
-          navigate(-1);
+        //   navigate(-1);
           toast.success("Guardado.");
         }
       });
