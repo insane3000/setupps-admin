@@ -227,7 +227,7 @@ export const components: any = {
       inputType: "select",
       defaultValue: "",
       readOnly: false,
-      options: ["", "Nvidia", "Amd", "MSI"],
+      options: ["", "Nvidia", "Amd"],
       //       options: ["", "AORUS", "Asus", "EVGA", "MSI", "Zotac"],
     },
     { key: "model", inputType: "text", defaultValue: "", readOnly: false },
