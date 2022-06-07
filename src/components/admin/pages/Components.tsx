@@ -409,9 +409,9 @@ const Components = () => {
       "price",
       "power",
       "specifications",
-
       "available",
-      "length",
+
+      "gpu_boost_clock",
       "memory",
       "memory_type",
       "benchmark",

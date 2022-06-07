@@ -68,7 +68,7 @@ export const components: any = {
       inputType: "select",
       defaultValue: "",
       readOnly: false,
-      options: ["", "AORUS", "ASRock", "Asus", "MSI", "NZXT"],
+      options: ["", "MSI"],
     },
     { key: "model", inputType: "text", defaultValue: "", readOnly: false },
     {
@@ -93,12 +93,20 @@ export const components: any = {
       options: ["", "Z690", "H670", "B660", "H610", "X570", "B550", "A520"],
     },
     {
+      key: "max_memory",
+      inputType: "select",
+      defaultValue: "",
+      readOnly: false,
+      options: ["", "32 GB", "64 GB", "128 GB"],
+    },
+    {
       key: "ram_type",
       inputType: "select",
       defaultValue: "",
       readOnly: false,
       options: ["", "DDR5", "DDR4"],
     },
+
     {
       key: "memory_speed_max",
       inputType: "select",
@@ -110,26 +118,20 @@ export const components: any = {
       ],
     },
     {
-      key: "lan_speed_max",
-      inputType: "select",
-      defaultValue: "",
-      readOnly: false,
-      options: ["", "1G", "2.5G", "10G"],
-    },
-    {
-      key: "max_memory",
-      inputType: "select",
-      defaultValue: "",
-      readOnly: false,
-      options: ["", "32 GB", "64 GB", "128 GB"],
-    },
-    {
       key: "PCIe",
       inputType: "select",
       defaultValue: "",
       readOnly: false,
       options: ["", "PCIe 3.0", "PCIe 4.0", "PCIe 5.0"],
     },
+    {
+      key: "lan_speed_max",
+      inputType: "select",
+      defaultValue: "",
+      readOnly: false,
+      options: ["", "1G", "2.5G", "10G"],
+    },
+
     {
       key: "form_factor",
       inputType: "select",
@@ -164,7 +166,7 @@ export const components: any = {
       inputType: "select",
       defaultValue: "",
       readOnly: false,
-      options: ["", "Corsair", "Kingston", "Crucial"],
+      options: ["", "Corsair"],
     },
     { key: "model", inputType: "text", defaultValue: "", readOnly: false },
 
@@ -225,7 +227,7 @@ export const components: any = {
       inputType: "select",
       defaultValue: "",
       readOnly: false,
-      options: ["", "Asus", "MSI"],
+      options: ["", "Nvidia", "Amd", "MSI"],
       //       options: ["", "AORUS", "Asus", "EVGA", "MSI", "Zotac"],
     },
     { key: "model", inputType: "text", defaultValue: "", readOnly: false },
@@ -331,7 +333,7 @@ export const components: any = {
       inputType: "select",
       defaultValue: "",
       readOnly: false,
-      options: ["", "Cooler Master", "Corsair", "NZXT"],
+      options: ["", "Corsair"],
     },
     { key: "model", inputType: "text", defaultValue: "", readOnly: false },
 
@@ -540,7 +542,7 @@ export const components: any = {
       inputType: "select",
       defaultValue: "",
       readOnly: false,
-      options: ["", "Cooler Master", "Corsair", "Noctua"],
+      options: ["", "Corsair"],
     },
     { key: "model", inputType: "text", defaultValue: "", readOnly: false },
 
