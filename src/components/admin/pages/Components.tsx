@@ -494,6 +494,19 @@ const Components = () => {
       "fans",
       "fans_size",
     ],
+    fan: [
+      "manufacturer",
+      "model",
+      "price",
+      "power",
+      "specifications",
+      "available",
+
+      "compatibility",
+      "cooler_type",
+      "fans",
+      "fans_size",
+    ],
   };
 
   return (
@@ -533,6 +546,7 @@ const Components = () => {
               <option value="ssd">ssd</option>
               <option value="hdd">hdd</option>
               <option value="cooler">cooler</option>
+              <option value="fan">fan</option>
             </select>
           </div>
         </section>

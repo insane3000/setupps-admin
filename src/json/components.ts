@@ -584,4 +584,60 @@ export const components: any = {
       options: ["true", "false"],
     },
   ],
+  // !FAN
+  fan: [
+    { key: "type", inputType: "text", defaultValue: "fan", readOnly: true },
+    {
+      key: "manufacturer",
+      inputType: "select",
+      defaultValue: "",
+      readOnly: false,
+      options: ["", "Corsair"],
+    },
+    { key: "model", inputType: "text", defaultValue: "", readOnly: false },
+
+    //     {
+    //       key: "cooler_type",
+    //       inputType: "select",
+    //       defaultValue: "",
+    //       readOnly: false,
+    //       options: ["", "Air", "Liquid"],
+    //     },
+    //     {
+    //       key: "fans",
+    //       inputType: "select",
+    //       defaultValue: 0,
+    //       readOnly: false,
+    //       options: [0, 1, 2, 3],
+    //     },
+    {
+      key: "fans_size",
+      inputType: "select",
+      defaultValue: 0,
+      readOnly: false,
+      options: [0, 92, 95.5, 120, 140],
+    },
+    //     { key: "compatibility", inputType: "text", defaultValue: "", readOnly: false },
+
+    { key: "noise_level", inputType: "text", defaultValue: "", readOnly: false },
+
+    { key: "price", inputType: "number", defaultValue: 0, readOnly: false },
+    {
+      key: "power",
+      inputType: "select",
+      defaultValue: 0,
+      readOnly: false,
+      options: [0, 3, 6, 9, 12],
+    },
+    { key: "quantity", inputType: "number", defaultValue: 1, readOnly: true },
+    { key: "error", inputType: "text", defaultValue: "false", readOnly: true },
+    { key: "warning", inputType: "text", defaultValue: "none", readOnly: true },
+    {
+      key: "available",
+      inputType: "select",
+      defaultValue: "true",
+      readOnly: false,
+      options: ["true", "false"],
+    },
+  ],
 };
